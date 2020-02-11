@@ -1,0 +1,35 @@
+
+A. Dombos (based on a procedure by A. Simon)
+
+Directions to gain match SuN with high voltage.
+
+1) Run get_current_high_voltages_from_website.sh to
+   save the current MPOD voltage settings into
+   current_high_voltages.txt   
+
+2) Record a 20 minute background run
+
+3) Convert that run into a SuN ROOT file
+
+4) Copy that ROOT file into the fitting directory
+   and name it hv_run.root
+
+5) Run gain_match.sh. This will create the histograms
+   and then fit the peak in each PMT that is from the
+   1460.8 keV gamma ray from the decay of 40K to 40Ar
+   that is present in room background radiation.
+   The peaks are gain matched to the value of
+   "new_channel_number" in the function "calculate_high_voltage"
+   in the script fitting/fit_histograms.C.
+   The new high voltage values are saved in new_high_voltages.txt.
+   Check the fit results.
+
+6) Check that the new high voltage values are reasonable.
+   The fit results show the current and new high voltage
+   on each pad associated with a PMT. Run draw_output_fit_histograms.C
+   whenever you need to look at the fit results.
+
+7) Run write_new_high_voltages_to_website.sh.
+   This will set the new high voltage values on the
+   MPOD power supply.
+

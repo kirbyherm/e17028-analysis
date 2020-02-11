@@ -1,0 +1,164 @@
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+E_SuNB4
+    3355.5   3352.09
+    3633.5   3623.88
+E_SuNT1
+    2816.5   2812.64
+    3190.5   3192.07
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+E_SuNT3
+    2840.5   2837.63
+    3217.5      3222
+E_SuNT4
+    2690.5   2613.99
+    3295.5   3169.84
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+E_SuNB4
+    3355.5   3352.09
+    3633.5   3623.88
+E_SuNT1
+    2816.5   2812.64
+    3190.5   3192.07
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+E_SuNT3
+    2840.5   2837.63
+    3217.5      3222
+E_SuNT4
+    2690.5   2613.99
+    3295.5   3169.84
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+E_SuNB4
+    3355.5   3352.09
+    3633.5   3623.88
+E_SuNT1
+    2816.5   2812.64
+    3190.5   3192.07
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+E_SuNT3
+    2840.5   2837.63
+    3217.5      3222
+E_SuNT4
+    2690.5   2613.99
+    3295.5   3169.84
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+    3511.53.55311e-316
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+    6313.53.78131e-316
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+    3717.53.94648e-316
+E_SuNB4
+    2384.5   3627.58
+    3355.5   3350.46
+    3633.53.94021e-316
+E_SuNT1
+    2189.5   2106.41
+    2816.5    2810.9
+    3190.53.94316e-316
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+    6103.53.9683e-316
+E_SuNT3
+    2254.5  -56.2717
+    2840.5   2838.89
+    3217.53.97912e-316
+E_SuNT4
+    2690.5   2676.83
+    3060.5    5772.1
+    3295.53.98272e-316
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+E_SuNB4
+    3355.5   3352.09
+    3633.5   3623.88
+E_SuNT1
+    2816.5   2812.64
+    3190.5   3192.07
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+E_SuNT3
+    2840.5   2837.63
+    3217.5      3222
+E_SuNT4
+    2690.5   2613.99
+    3295.5   3169.84
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    2822.5   2818.42
+    3196.5   3199.73
+E_SuNB2
+    2949.5   2948.09
+    3340.5   3342.07
+E_SuNB3
+    2989.5   2989.79
+    3391.5   3396.04
+E_SuNB4
+    3355.5   3352.09
+    3633.5   3623.88
+E_SuNT1
+    2816.5   2812.64
+    3190.5   3192.07
+E_SuNT2
+    2863.5   2861.11
+    3238.5   3239.75
+E_SuNT3
+    2840.5   2837.63
+    3217.5      3222
+E_SuNT4
+    2690.5   2613.99
+    3295.5   3169.84

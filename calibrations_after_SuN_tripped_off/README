@@ -1,0 +1,24 @@
+Scripts by Alex Dombos
+How to use the calibrations scripts for SuN
+
+1. Edit the SuN_gain_matching_factors.h with the new gain matching values from the centroid analysis. Pick one of the center PMTs [1][2][2] and match all the others to it.
+
+2. Navigate to the folder with the source of choice. Edit pathway in create_histograms.C to your root file of interest.
+
+   chains->Add("PATHWAY/TO/ROOT/FILES");
+
+Run create_histograms.C in root.
+
+    .x create_histograms.C
+
+Close root.
+3. Open root and run the fit_histograms.C.
+
+   .x fit_histograms.C
+
+Close root.
+4. Open root and run draw_fit_histograms.C and check the fits. Sometimes it will not work and you need to fit some by hand.
+
+   .x draw_fit_histograms.C
+
+5. The new centroids will be printed to centroids.txt. It appends to the current file and will not overwrite the previous fits.

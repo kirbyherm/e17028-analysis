@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Sets the high voltages on the MPOD power supply
+# as provided in new_high_voltages.txt
+# These new high voltages will appear at
+# https://daqwww.nscl.msu.edu/sundaq/
+
+ip_address="10.65.50.130"
+
+while read channel old_voltage new_voltage
+
+do
+
+    echo ${channel} ${new_voltage}
+
+    # Need to remove the leading "u" and fix the "off by one" difference
+    # between the snmpset command and the channels on the website
+    channel=${channel:1} # remove leading "u"
+    channel=$(( ${channel} + 1 )) # fix "off by one" difference
+    
+    snmpset -OqvU -v 2c -m +WIENER-CRATE-MIB -c guru ${ip_address} outputVoltage.${channel} F ${new_voltage}
+
+done < new_high_voltages.txt

@@ -1,0 +1,18 @@
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+E_SuNB1
+    1564.5   1562.32
+E_SuNB2
+    1576.5   1575.28
+E_SuNB3
+    1614.5   1614.02
+E_SuNB4
+    1587.5   1583.51
+E_SuNT1
+    1544.5   1541.54
+E_SuNT2
+    1528.5   1527.64
+E_SuNT3
+    1551.5   1550.47
+E_SuNT4
+    1511.5   1508.29

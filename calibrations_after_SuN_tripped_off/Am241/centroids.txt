@@ -1,0 +1,18 @@
+Check picture of fits. Some fits may need to be performed manually.
+Keep in the order of the fits compared to any Excel sheets or filtering scripts.
+EB1
+     192.5   224.098
+EB2
+     224.5   259.105
+EB3
+     132.5   132.334
+EB4
+     196.5   225.413
+ET1
+     189.5   242.346
+ET2
+     208.5    240.88
+ET3
+     135.5   135.262
+ET4
+     190.5   210.482

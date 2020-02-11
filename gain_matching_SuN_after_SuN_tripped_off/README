@@ -1,0 +1,23 @@
+Scripts by Alex Dombos
+How to use the gain_matching_SuN
+
+1. Run gain_matching_hv scripts to get updated high voltage values for SuN on the website.
+2. Edit pathway in create_histograms.C to your root file of interest.
+
+   chains->Add("PATHWAY/TO/ROOT/FILES");
+
+Run create_histograms.C in root.
+
+    .x create_histograms.C
+
+Close root.
+3. Open root and run the fit_histograms.C.
+
+   .x fit_histograms.C
+
+Close root.
+4. Open root and run draw_fit_histograms.C and check the fits. Sometimes it will not work and you need to fit some by hand.
+
+   .x draw_fit_histograms.C
+
+5. The new centroids will be output to centroids.txt. It adds on to the txt file so if it is run multiple times it will not overwrite the previous values. 

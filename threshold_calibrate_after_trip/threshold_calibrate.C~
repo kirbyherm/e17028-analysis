@@ -1,0 +1,326 @@
+///////////////////////////////////////////////////////////////////
+// Alex Dombos
+// 
+// This applies an energy threshold for each segment. The energy 
+// in the segment needs to be above this threshold for it to be
+// added to the other segments in the total absorption spectrum.
+//
+// To run:
+// root[0] .L threshold_calibrate.C+
+// root[1] threshold_calibrate(arguments)
+//
+// Edited by Caley Harris and Alicia Palmisano
+// for e17028 March 2019
+///////////////////////////////////////////////////////////////////
+
+#include "TFile.h"
+#include "TTree.h"
+#include "TChain.h"
+
+#include "TRandom3.h"
+
+#include <iostream>
+
+void threshold_calibrate(int run_number,
+			 int segment_threshold){
+  
+  // For calibrations
+  int seed = 47093625;
+  TRandom3* ran = new TRandom3(seed);
+  
+  // Output ROOT file
+  TFile* fOut = new TFile(Form("run_%d_segment_threshold_%03d_keV.root",
+			       run_number,
+			       segment_threshold),
+			  "RECREATE");
+
+  // Create a chain of input ROOT files
+  TChain* chain = new TChain("t");  
+  chain->Add(Form("/mnt/analysis/e17028/rootfiles/run0%d-*.root",
+		  run_number));
+  
+  // Variables for output ROOT file
+  double sumAll = 0.0;
+  double mult = 0.0;
+  double energyT1 = 0.0;
+  double energyT2 = 0.0;
+  double energyT3 = 0.0;
+  double energyT4 = 0.0;
+  double energyB1 = 0.0;
+  double energyB2 = 0.0;
+  double energyB3 = 0.0;
+  double energyB4 = 0.0;
+  double energyFrontHigh1  = 0.0; 
+  double energyFrontHigh2  = 0.0; 
+  double energyFrontHigh3  = 0.0; 
+  double energyFrontHigh4  = 0.0; 
+  double energyFrontHigh5  = 0.0; 
+  double energyFrontHigh6  = 0.0; 
+  double energyFrontHigh7  = 0.0; 
+  double energyFrontHigh8  = 0.0; 
+  double energyFrontHigh9  = 0.0; 
+  double energyFrontHigh10  = 0.0;
+  double energyFrontHigh11  = 0.0;
+  double energyFrontHigh12  = 0.0;
+  double energyFrontHigh13  = 0.0;
+  double energyFrontHigh14  = 0.0;
+  double energyFrontHigh15  = 0.0;
+  double energyFrontHigh16  = 0.0;
+  double energyBackHigh1  = 0.0; 
+  double energyBackHigh2  = 0.0; 
+  double energyBackHigh3  = 0.0; 
+  double energyBackHigh4  = 0.0; 
+  double energyBackHigh5  = 0.0; 
+  double energyBackHigh6  = 0.0; 
+  double energyBackHigh7  = 0.0; 
+  double energyBackHigh8  = 0.0; 
+  double energyBackHigh9  = 0.0; 
+  double energyBackHigh10  = 0.0;
+  double energyBackHigh11  = 0.0;
+  double energyBackHigh12  = 0.0;
+  double energyBackHigh13  = 0.0;
+  double energyBackHigh14  = 0.0;
+  double energyBackHigh15  = 0.0;
+  double energyBackHigh16  = 0.0;
+
+
+  // Create tree and branches for the output ROOT file
+  TTree* ttc  = new TTree("ttc","output after applying calibrations and thresholds");
+  ttc->Branch("eneAll", &sumAll,  "eneAll/D");
+  ttc->Branch("eneT1", &energyT1, "eneT1/D");
+  ttc->Branch("eneT2", &energyT2, "eneT2/D");
+  ttc->Branch("eneT3", &energyT3, "eneT3/D");
+  ttc->Branch("eneT4", &energyT4, "eneT4/D");
+  ttc->Branch("eneB1", &energyB1, "eneB1/D");
+  ttc->Branch("eneB2", &energyB2, "eneB2/D");
+  ttc->Branch("eneB3", &energyB3, "eneB3/D");
+  ttc->Branch("eneB4", &energyB4, "eneB4/D");
+  ttc->Branch("multi", &mult,     "multi/D");
+  ttc->Branch("eneFHi1 ",  &energyFrontHigh1 ,  "eneFHi1 /D");
+  ttc->Branch("eneFHi2 ",  &energyFrontHigh2 ,  "eneFHi2 /D");
+  ttc->Branch("eneFHi3 ",  &energyFrontHigh3 ,  "eneFHi3 /D");
+  ttc->Branch("eneFHi4 ",  &energyFrontHigh4 ,  "eneFHi4 /D");
+  ttc->Branch("eneFHi5 ",  &energyFrontHigh5 ,  "eneFHi5 /D");
+  ttc->Branch("eneFHi6 ",  &energyFrontHigh6 ,  "eneFHi6 /D");
+  ttc->Branch("eneFHi7 ",  &energyFrontHigh7 ,  "eneFHi7 /D");
+  ttc->Branch("eneFHi8 ",  &energyFrontHigh8 ,  "eneFHi8 /D");
+  ttc->Branch("eneFHi9 ",  &energyFrontHigh9 ,  "eneFHi9 /D");
+  ttc->Branch("eneFHi10 ", &energyFrontHigh10,  "eneFHi10 /D");
+  ttc->Branch("eneFHi11 ", &energyFrontHigh11 , "eneFHi11 /D");
+  ttc->Branch("eneFHi12 ", &energyFrontHigh12 , "eneFHi12 /D");
+  ttc->Branch("eneFHi13 ", &energyFrontHigh13 , "eneFHi13 /D");
+  ttc->Branch("eneFHi14 ", &energyFrontHigh14 , "eneFHi14 /D");
+  ttc->Branch("eneFHi15 ", &energyFrontHigh15 , "eneFHi15 /D");
+  ttc->Branch("eneFHi16 ", &energyFrontHigh16 , "eneFHi16 /D");
+  ttc->Branch("eneBHi1 ",  &energyBackHigh1 ,  "eneBHi1 /D");
+  ttc->Branch("eneBHi2 ",  &energyBackHigh2 ,  "eneBHi2 /D");
+  ttc->Branch("eneBHi3 ",  &energyBackHigh3 ,  "eneBHi3 /D");
+  ttc->Branch("eneBHi4 ",  &energyBackHigh4 ,  "eneBHi4 /D");
+  ttc->Branch("eneBHi5 ",  &energyBackHigh5 ,  "eneBHi5 /D");
+  ttc->Branch("eneBHi6 ",  &energyBackHigh6 ,  "eneBHi6 /D");
+  ttc->Branch("eneBHi7 ",  &energyBackHigh7 ,  "eneBHi7 /D");
+  ttc->Branch("eneBHi8 ",  &energyBackHigh8 ,  "eneBHi8 /D");
+  ttc->Branch("eneBHi9 ",  &energyBackHigh9 ,  "eneBHi9 /D");
+  ttc->Branch("eneBHi10 ", &energyBackHigh10,  "eneBHi10 /D");
+  ttc->Branch("eneBHi11 ", &energyBackHigh11 , "eneBHi11 /D");
+  ttc->Branch("eneBHi12 ", &energyBackHigh12 , "eneBHi12 /D");
+  ttc->Branch("eneBHi13 ", &energyBackHigh13 , "eneBHi13 /D");
+  ttc->Branch("eneBHi14 ", &energyBackHigh14 , "eneBHi14 /D");
+  ttc->Branch("eneBHi15 ", &energyBackHigh15 , "eneBHi15 /D");
+  ttc->Branch("eneBHi16 ", &energyBackHigh16 , "eneBHi16 /D");
+
+
+  // Read in energies from input file
+  int ene[2][5][4] = {{{0}}};
+  chain->SetBranchAddress("energy_SuN", &ene);
+  chain->SetBranchAddress("energy_DSSD_high", &eneHigh);
+ 
+  int counter = 10;
+  int num = chain->GetEntries();
+  for (int i=0; i<num; i++){                                                                
+
+    chain->GetEntry(i);
+
+    // Counter
+    if (i % (int)(0.1*num) == 0){
+      std::cerr << counter << " ";
+      counter --;
+    }
+          
+    // Apply gain matching
+    // Gain match the PMTs
+
+    // Bottom PMTs
+    double b11 = (ene[0][1][1] + ran->Uniform()) * 0.992497081;
+    double b12 = (ene[0][1][2] + ran->Uniform()) * 0.998668299;
+    double b13 = (ene[0][1][3] + ran->Uniform()) * 1.001069886;
+    double b21 = (ene[0][2][1] + ran->Uniform()) * 0.996813761;
+    double b22 = (ene[0][2][2] + ran->Uniform()) * 0.997047639;
+    double b23 = (ene[0][2][3] + ran->Uniform()) * 1.009912069;
+    double b31 = (ene[0][3][1] + ran->Uniform()) * 1.001423746;
+    double b32 = (ene[0][3][2] + ran->Uniform()) * 1.000618095;
+    double b33 = (ene[0][3][3] + ran->Uniform()) * 1.017925404;
+    double b41 = (ene[0][4][1] + ran->Uniform()) * 1.009312406;
+    double b42 = (ene[0][4][2] + ran->Uniform()) * 0.996667644;
+    double b43 = (ene[0][4][3] + ran->Uniform()) * 1.015159357;
+    						     
+    // Top PMTs				     
+    double t11 = (ene[1][1][1] + ran->Uniform()) * 0.998482534;
+    double t12 = (ene[1][1][2] + ran->Uniform()) * 1.001620443;
+    double t13 = (ene[1][1][3] + ran->Uniform()) * 0.997154869;
+    double t21 = (ene[1][2][1] + ran->Uniform()) * 0.998795440;
+    double t22 = (ene[1][2][2] + ran->Uniform()) * 0.999715736;
+    double t23 = (ene[1][2][3] + ran->Uniform()) * 1.009792079;
+    double t31 = (ene[1][3][1] + ran->Uniform()) * 0.997906128;
+    double t32 = (ene[1][3][2] + ran->Uniform()) * 1.000000000;
+    double t33 = (ene[1][3][3] + ran->Uniform()) * 1.005085097;
+    double t41 = (ene[1][4][1] + ran->Uniform()) * 0.992226719;
+    double t42 = (ene[1][4][2] + ran->Uniform()) * 0.997710887;
+    double t43 = (ene[1][4][3] + ran->Uniform()) * 0.999177060;
+
+    //Apply gain matching to DSSD
+    double fh1 =  (eneHigh[0][0]  + ran->Uniform()) * 1.053922924;
+    double fh2 =  (eneHigh[0][1]  + ran->Uniform()) * 0.975402273;
+    double fh3 =  (eneHigh[0][2]  + ran->Uniform()) * 0.987547718;
+    double fh4 =  (eneHigh[0][3]  + ran->Uniform()) * 0.986183308;
+    double fh5 =  (eneHigh[0][4]  + ran->Uniform()) * 0.993707459;
+    double fh6 =  (eneHigh[0][5]  + ran->Uniform()) * 1.005635463;
+    double fh7 =  (eneHigh[0][6]  + ran->Uniform()) * 0.982112607;
+    double fh8 =  (eneHigh[0][7]  + ran->Uniform()) * 1.000000000;
+    double fh9 =  (eneHigh[0][8]  + ran->Uniform()) * 0.988203976;
+    double fh10 = (eneHigh[0][9]  + ran->Uniform()) * 0.988203976;
+    double fh11 = (eneHigh[0][10] + ran->Uniform()) * 0.991663694;
+    double fh12 = (eneHigh[0][11] + ran->Uniform()) * 0.982112607;
+    double fh13 = (eneHigh[0][12] + ran->Uniform()) * 0.960957534;
+    double fh14 = (eneHigh[0][13] + ran->Uniform()) * 0.978075373;
+    double fh15 = (eneHigh[0][14] + ran->Uniform()) * 1.013517528;
+    double fh16 = (eneHigh[0][15] + ran->Uniform()) * 1.037079032;
+    
+    double bh1 =  (eneHigh[1][0]  + ran->Uniform()) * 1.075184035;
+    double bh2 =  (eneHigh[1][1]  + ran->Uniform()) * 1.029733309;
+    double bh3 =  (eneHigh[1][2]  + ran->Uniform()) * 1.059852078;
+    double bh4 =  (eneHigh[1][3]  + ran->Uniform()) * 0.970147845;
+    double bh5 =  (eneHigh[1][4]  + ran->Uniform()) * 1.029732943;
+    double bh6 =  (eneHigh[1][5]  + ran->Uniform()) * 1.050557172;
+    double bh7 =  (eneHigh[1][6]  + ran->Uniform()) * 1.077421928;
+    double bh8 =  (eneHigh[1][7]  + ran->Uniform()) * 1.000000000;
+    double bh9 =  (eneHigh[1][8]  + ran->Uniform()) * 1.086426721;
+    double bh10 = (eneHigh[1][9]  + ran->Uniform()) * 1.055530148;
+    double bh11 = (eneHigh[1][10] + ran->Uniform()) * 1.053382182;
+    double bh12 = (eneHigh[1][11] + ran->Uniform()) * 1.068565179;
+    double bh13 = (eneHigh[1][12] + ran->Uniform()) * 0.992365534;
+    double bh14 = (eneHigh[1][13] + ran->Uniform()) * 1.051242941;
+    double bh15 = (eneHigh[1][14] + ran->Uniform()) * 1.049834274;
+    double bh16 = (eneHigh[1][15] + ran->Uniform()) * 1.048429378;
+    
+    
+    // Sum the PMTs to create a SuN segment
+    
+    // Bottom Segments
+    double eB1 = b11 + b12 + b13;
+    double eB2 = b21 + b22 + b23;
+    double eB3 = b31 + b32 + b33;
+    double eB4 = b41 + b42 + b43;
+    
+    // Top Segments
+    double eT1 = t11 + t12 + t13;
+    double eT2 = t21 + t22 + t23;
+    double eT3 = t31 + t32 + t33;
+    double eT4 = t41 + t42 + t43;
+    
+    // Calibrate the SuN segments
+    // Apply an individualized quadratic calibration to each segment
+    
+    // Bottom Segments
+    double eB1cal = 0.4328 * eB1 - 13.399;
+    double eB2cal = 0.4318 * eB2 - 18.238;
+    double eB3cal = 0.4212 * eB3 - 17.763;
+    double eB4cal = 0.4265 * eB4 - 12.532;
+    		            
+    // Top Segments         
+    double eT1cal = 0.4490 * eT1 - 29.055;
+    double eT2cal = 0.4550 * eT2 - 31.480;
+    double eT3cal = 0.4473 * eT3 - 31.425;
+    double eT4cal = 0.4566 * eT4 - 25.369;
+    
+    // Apply threshold
+    // (include only the positive, non-zero values of energy to avoid any offsets)
+    
+    // Energy (keV) cutoff for each segment
+    double eB1cutOff = segment_threshold;
+    double eB2cutOff = segment_threshold;
+    double eB3cutOff = segment_threshold;
+    double eB4cutOff = segment_threshold;
+    
+    double eT1cutOff = segment_threshold;
+    double eT2cutOff = segment_threshold;
+    double eT3cutOff = segment_threshold;
+    double eT4cutOff = segment_threshold;
+    
+    // Initialize output rootfile variables to zero
+    sumAll = 0.0;
+    mult = 0.0;
+    energyT1 = 0.0;
+    energyT2 = 0.0;
+    energyT3 = 0.0;
+    energyT4 = 0.0;
+    energyB1 = 0.0;
+    energyB2 = 0.0;
+    energyB3 = 0.0;
+    energyB4 = 0.0;
+    
+    // If calibrated segments are above the threshold,
+    // put the event in the new tree and add it to the total absorption spectrum
+    if (eB1cal > eB1cutOff){
+    	energyB1 = eB1cal;
+    	mult ++;
+    	sumAll += eB1cal;
+    }
+    if (eB2cal > eB2cutOff){
+    	energyB2 = eB2cal;
+    	mult ++;
+    	sumAll += eB2cal;
+    }
+    if (eB3cal > eB3cutOff){
+    	energyB3 = eB3cal;
+    	mult ++;
+    	sumAll += eB3cal;
+    }
+    if (eB4cal > eB4cutOff){
+    	energyB4 = eB4cal;
+    	mult ++;
+    	sumAll += eB4cal;
+    }
+    if (eT1cal > eT1cutOff){
+    	energyT1 = eT1cal;
+    	mult ++;
+    	sumAll += eT1cal;
+    }
+    if (eT2cal > eT2cutOff){
+    	energyT2 = eT2cal;
+    	mult ++;
+    	sumAll += eT2cal;
+    }
+    if (eT3cal > eT3cutOff){
+    	energyT3 = eT3cal;
+    	mult ++;
+    	sumAll += eT3cal;
+    }
+    if (eT4cal > eT4cutOff){
+    	energyT4 = eT4cal;
+    	mult ++;
+    	sumAll += eT4cal;
+    }
+    
+    // Fill Tree
+    ttc->Fill();
+  
+  }
+
+  // Write to file
+  chain->Delete();
+  fOut->cd();
+  ttc->Write();
+  fOut->Close();
+  
+}

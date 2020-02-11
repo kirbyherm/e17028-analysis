@@ -1,0 +1,9 @@
+Source was positioned at different locations along the beam pipe
+in order to see the 60 keV gamma ray in the outer segments.
+
+Make multiple directories for each run with a new source position in SuN. Copy create_histograms.C, fit_histograms.C, draw_fit_histograms.C and centroids.txt into each folder.
+
+Run1028 source is between segments 2 and 3
+Run1038 source is between segments 3 and 4
+Run1039 source is centered on segment 4
+Run1040 source is between segments 1 and 2
