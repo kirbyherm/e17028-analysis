@@ -1,0 +1,104 @@
+#include "TGraph.h"
+
+
+void cuts(){
+    TCutG *b1 = new TCutG("PIN2TOFb1",4);
+    b1->SetVarX("energy_TAC_PIN2_I2N");
+    b1->SetVarY("PIN1+PIN2");
+    b1->SetPoint(0,5000,14000);
+    b1->SetPoint(1,10000,12000);
+    b1->SetPoint(2,9000,11000);
+    b1->SetPoint(3,5000,12500);
+    TCutG *b2 = new TCutG("PIN2TOFb2",4);
+    b2->SetVarX("energy_TAC_PIN2_I2N");
+    b2->SetVarY("PIN1+PIN2");
+    b2->SetPoint(0,5500,14800);
+    b2->SetPoint(1,9000,13300);
+    b2->SetPoint(2,9000,13000);
+    b2->SetPoint(3,5500,14250);
+    TCutG *b3 = new TCutG("PIN2TOFb3",4);
+    b3->SetVarX("energy_TAC_PIN2_I2N");
+    b3->SetVarY("PIN1+PIN2");
+    b3->SetPoint(0,6000,16250);
+    b3->SetPoint(1,11500,14000);
+    b3->SetPoint(2,11000,13500);
+    b3->SetPoint(3,6000,15500);
+    TCutG *b4 = new TCutG("PIN2TOFb4",4);
+    b4->SetVarX("energy_TAC_PIN2_I2N");
+    b4->SetVarY("PIN1+PIN2");
+    b4->SetPoint(0,6250,17800);
+    b4->SetPoint(1,11500,15250);
+    b4->SetPoint(2,11000,14750);
+    b4->SetPoint(3,6000,17300);
+    TCutG *b5 = new TCutG("PIN2TOFb5",4);
+    b5->SetVarX("energy_TAC_PIN2_I2N");
+    b5->SetVarY("PIN1+PIN2");
+    b5->SetPoint(0,7000,19300);
+    b5->SetPoint(1,11500,16750);
+    b5->SetPoint(2,11500,16000);
+    b5->SetPoint(3,7000,18450);
+    TCutG *b6 = new TCutG("PIN2TOFb6",4);
+    b6->SetVarX("energy_TAC_PIN2_I2N");
+    b6->SetVarY("PIN1+PIN2");
+    b6->SetPoint(0,7300,20700);
+    b6->SetPoint(1,12000,18000);
+    b6->SetPoint(2,11750,17500);
+    b6->SetPoint(3,7500,20000);
+    TCutG *b7 = new TCutG("PIN2TOFb7",4);
+    b7->SetVarX("energy_TAC_PIN2_I2N");
+    b7->SetVarY("PIN1+PIN2");
+    b7->SetPoint(0,8000,22000);
+    b7->SetPoint(1,11750,20000);
+    b7->SetPoint(2,11500,19500);
+    b7->SetPoint(3,8000,21500);
+    TCutG *b8 = new TCutG("PIN2TOFb8",4);
+    b8->SetVarX("energy_TAC_PIN2_I2N");
+    b8->SetVarY("PIN1+PIN2");
+    b8->SetPoint(0,8500,24000);
+    b8->SetPoint(1,11500,22000);
+    b8->SetPoint(2,11250,21250);
+    b8->SetPoint(3,8500,23000);
+    TCutG *ti57 = new TCutG("ti57",7);
+    ti57->SetVarX(("(energy_TAC_I2N_I2S*1.0+energy_TAC_PIN2_I2S+1500)"));
+    ti57->SetVarY("PIN2");
+    ti57->SetPoint(0,17250,11650);
+    ti57->SetPoint(1,17400,11500);
+    ti57->SetPoint(2,17250,11250);
+    ti57->SetPoint(3,17250,11200);
+    ti57->SetPoint(4,16900,11200);
+    ti57->SetPoint(5,16800,11500);
+    ti57->SetPoint(6,17000,11650);
+    TCutG *pin12 = new TCutG("pin12",5);
+    pin12->SetVarX(("PIN2"));
+    pin12->SetVarY("PIN1");
+    pin12->SetPoint(0,1,(int) (300 * 1.06637654974));
+    pin12->SetPoint(1,16000,(int) (9400 * 1.06637654974));
+    pin12->SetPoint(2,16000,(int) (8400 * 1.06637654974));
+    pin12->SetPoint(3,500,1);
+    pin12->SetPoint(4,1,1);
+    TCutG *i2pos = new TCutG("i2pos",6);
+    i2pos->SetVarY(("PIN2"));
+    i2pos->SetVarX(("energy_TAC_I2N_I2S"));
+    i2pos->SetPoint(0,3000,8000);
+    i2pos->SetPoint(1,3600,18000);
+    i2pos->SetPoint(2,5600,18000);
+    i2pos->SetPoint(3,4600,7000);
+    i2pos->SetPoint(4,4800,5000);
+    i2pos->SetPoint(5,3000,5000);
+//    i2pos->SetPoint(0,-1,-1);
+//    i2pos->SetPoint(1,-1,132000);
+//    i2pos->SetPoint(2,100,132000);
+//    i2pos->SetPoint(3,100,-1);
+
+
+    TCutG *veto = new TCutG("veto",4);
+    veto->SetVarY(("energy_Veto"));
+    veto->SetVarX(("energy_Veto"));
+    veto->SetPoint(0,-1,-1);
+    veto->SetPoint(1,-1,1);
+    veto->SetPoint(2,1,1);
+    veto->SetPoint(3,1,-1);
+
+
+    return 0;
+}

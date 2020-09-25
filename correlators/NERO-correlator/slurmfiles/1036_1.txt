@@ -1,0 +1,1701 @@
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13355
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+9 8.14909e+06
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+4
+3
+8 1.66404e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+4
+3
+3
+3
+3
+7 2.60697e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+6 3.77786e+07
+3
+3
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+5 4.83615e+07
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4 5.74903e+07
+4
+3
+4
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3 6.62253e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+2 7.51485e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+1 8.35015e+07
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+3
+4
+4
+3
+3
+0 9.19887e+07
+667
+214
+1011
+9.20039e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13522
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+9 8.97471e+06
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+8 1.75972e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+7 2.65199e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4
+3
+6 3.48933e+07
+3
+3
+3
+3
+4
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+4
+5 4.32805e+07
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4 5.28504e+07
+3
+4
+3
+3
+5
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3 6.19195e+07
+3
+3
+3
+3
+3
+3
+3
+4
+3
+4
+3
+4
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+2 7.2438e+07
+3
+3
+3
+3
+3
+3
+3
+5
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+1 8.03265e+07
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+0 8.79678e+07
+735
+237
+1655
+8.79828e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13216
+9 8.75787e+06
+3
+8 1.7054e+07
+3
+7 2.6554e+07
+6 3.78126e+07
+3
+5 4.75045e+07
+3
+4 5.56769e+07
+3
+3 6.39976e+07
+2 7.18007e+07
+3
+1 7.96777e+07
+3
+0 8.75937e+07
+21
+7
+21
+8.76065e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13779
+3
+9 8.45551e+06
+8 1.62807e+07
+3
+7 2.64517e+07
+6 3.8588e+07
+5 4.67479e+07
+3
+4 5.53398e+07
+3 6.40296e+07
+2 7.18285e+07
+1 7.98982e+07
+0 8.75939e+07
+9
+3
+35
+8.76057e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13218
+3
+3
+3
+3
+3
+3
+3
+9 8.1177e+06
+5
+3
+3
+3
+3
+8 1.89034e+07
+3
+7 2.83736e+07
+4
+5
+4
+3
+6 3.6202e+07
+3
+3
+3
+5 4.42966e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4 5.22619e+07
+3
+3
+3
+3
+3
+3
+3 6.02522e+07
+3
+4
+3
+3
+2 6.81901e+07
+3
+3
+3
+4
+3
+3
+1 7.59498e+07
+3
+3
+3
+3
+3
+0 8.3813e+07
+161
+51
+322
+8.38262e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 12984
+3
+3
+3
+3
+9 8.34986e+06
+3
+4
+3
+3
+3
+3
+8 1.60154e+07
+3
+3
+3
+3
+3
+7 2.39096e+07
+3
+3
+3
+3
+3
+3
+6 3.14223e+07
+3
+3
+3
+3
+3
+3
+5 3.86926e+07
+3
+3
+3
+3
+3
+3
+4 4.72045e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3 5.63333e+07
+3
+3
+3
+3
+3
+2 6.43539e+07
+3
+4
+3
+1 7.21046e+07
+3
+3
+0 8.02357e+07
+155
+51
+204
+8.02487e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13097
+3
+9 7.89015e+06
+3
+8 1.54e+07
+3
+7 2.34677e+07
+3
+6 3.17617e+07
+3
+3
+5 3.97416e+07
+3
+4 4.79459e+07
+3
+3
+3
+3
+3 5.64192e+07
+3
+2 6.43403e+07
+1 7.2288e+07
+3
+0 8.01531e+07
+39
+13
+83
+8.01656e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 12848
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+9 8.01625e+06
+3
+3
+3
+3
+3
+3
+3
+3
+5
+3
+3
+3
+3
+3
+3
+8 1.53351e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+7 2.32579e+07
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+5
+3
+3
+3
+3
+6 3.11325e+07
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+5
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+5 3.92661e+07
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+5
+3
+3
+3
+5
+3
+3
+4 4.72172e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3 5.53474e+07
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+2 6.30453e+07
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+4
+3
+3
+3
+1 7.05308e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+0 7.81495e+07
+593
+191
+736
+7.81629e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 12985
+3
+3
+3
+3
+3
+3
+3
+3
+9 7.99149e+06
+8 1.53162e+07
+3
+3
+7 2.3142e+07
+3
+3
+6 3.06175e+07
+5 3.78968e+07
+3
+3
+3
+3
+4 4.59588e+07
+3
+3
+3
+3 5.46302e+07
+4
+2 6.23145e+07
+3
+3
+1 6.96057e+07
+3
+3
+3
+3
+0 7.70811e+07
+79
+26
+223
+7.70934e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13325
+9 7.90424e+06
+3
+8 1.51215e+07
+7 2.29215e+07
+3
+6 3.03765e+07
+5
+5 3.75981e+07
+4 4.53792e+07
+4
+3 5.33371e+07
+3
+3
+3
+2 6.10565e+07
+1 6.96408e+07
+3
+3
+3
+0 7.7267e+07
+33
+10
+48
+7.72794e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13027
+3
+3
+4
+3
+3
+3
+3
+3
+3
+5
+3
+4
+4
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+9 8.01352e+06
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+5
+3
+3
+3
+3
+3
+3
+3
+3
+3
+8 1.53552e+07
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+7 2.33891e+07
+3
+4
+3
+4
+3
+4
+3
+3
+3
+4
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+6 3.11972e+07
+3
+3
+4
+3
+3
+3
+3
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+4
+3
+5 3.87136e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+4
+3
+3
+4
+4 4.68521e+07
+3
+3
+3
+4
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+4
+4
+3
+3 5.53658e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+5
+3
+3
+3
+2 6.33026e+07
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+4
+4
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+1 7.09186e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4
+3
+3
+3
+3
+0 7.86822e+07
+836
+266
+942
+7.86968e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 12998
+3
+3
+3
+3
+3
+3
+3
+3
+3
+9 7.96442e+06
+3
+3
+3
+3
+3
+4
+3
+3
+3
+8 1.52232e+07
+4
+3
+3
+3
+3
+3
+7 2.30635e+07
+3
+4
+3
+3
+3
+3
+4
+3
+6 3.06652e+07
+3
+4
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+5 3.83756e+07
+3
+3
+4
+3
+3
+3
+3
+3
+3
+4 4.60705e+07
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3 5.38775e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+2 6.1487e+07
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+3
+1 6.98596e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+0 7.80579e+07
+294
+95
+829
+7.80718e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13175
+4
+3
+3
+4
+9 7.92658e+06
+3
+3
+8 1.51709e+07
+4
+3
+3
+3
+3
+3
+7 2.29889e+07
+3
+6 3.04698e+07
+3
+3
+4
+3
+3
+3
+5 3.77348e+07
+3
+3
+3
+3
+3
+3
+3
+4 4.54546e+07
+3
+3
+3
+3
+3
+3
+3
+3 5.32733e+07
+3
+3
+2 6.08993e+07
+4
+5
+3
+1 6.86803e+07
+3
+3
+3
+0 7.62701e+07
+130
+41
+182
+7.62825e+07
+Does this even work?
+Making outputfile
+Made outputfile
+Made chain
+Added stuff
+Added TACS
+Added PINS
+Added DSSD
+Added SuN
+Added SSSD
+Added DSSD pixel
+front pixels = 40
+I made the cuts
+Added counter
+10 13164
+3
+3
+3
+3
+3
+3
+9 7.8999e+06
+3
+4
+3
+3
+3
+3
+3
+8 1.57351e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+7 2.38132e+07
+3
+3
+3
+3
+3
+3
+3
+6 3.13585e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+5 3.89278e+07
+3
+3
+3
+3
+3
+4
+3
+3
+3
+4 4.65752e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3 5.43647e+07
+3
+3
+3
+3
+3
+3
+3
+3
+4
+3
+3
+3
+3
+3
+3
+3
+2 6.19771e+07
+3
+3
+3
+3
+3
+1 6.96093e+07
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+3
+0 7.75459e+07
+273
+90
+1218
+7.75598e+07

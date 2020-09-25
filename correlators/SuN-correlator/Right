@@ -1,0 +1,19 @@
+{
+//========= Macro generated from object: Right/Graph
+//========= by ROOT version5.34/32
+   
+   cutg = new TCutG("Right",8);
+   cutg->SetVarX("energy_TAC_PIN1_I2N");
+   cutg->SetVarY("energy_PIN1");
+   cutg->SetTitle("Graph");
+   cutg->SetFillColor(1);
+   cutg->SetPoint(0,14759.3,4052.74);
+   cutg->SetPoint(1,14601.7,4089.66);
+   cutg->SetPoint(2,14451.3,4047.47);
+   cutg->SetPoint(3,14594.6,4010.55);
+   cutg->SetPoint(4,14866.8,3984.18);
+   cutg->SetPoint(5,14888.3,4015.82);
+   cutg->SetPoint(6,14745,4052.74);
+   cutg->SetPoint(7,14759.3,4052.74);
+   cutg->Draw("");
+}
