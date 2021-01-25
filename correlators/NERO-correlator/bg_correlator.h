@@ -380,7 +380,7 @@ public:
   double GetTStripHighAvg() const;
 
   // Calibration
-  int Calibrate();
+  int Calibrate(double maxtime);
   // Diagnostics
   friend std::ostream& operator<< (std::ostream& os, const DSSD& event);
 
@@ -528,7 +528,7 @@ double DSSD::GetTStripHighAvg() const{
   return (t_strip_high_back + t_strip_high_front) / 2.0;
 }
 
-int DSSD::Calibrate(){
+int DSSD::Calibrate(double maxtime){
 
   // Calibration values
 
@@ -537,7 +537,6 @@ int DSSD::Calibrate(){
   double e_low_slopes[2][40] = {{0}};
   
   // Low gain, back side
-    // identical to high gain gm factors (assume the preamps provide the same gain factors to both low and high gain)
 
   e_low_slopes[0][0]  = 0.7667141951291161;//1;
   e_low_slopes[0][1]  = 0.7191445391285389;//1;
@@ -631,7 +630,6 @@ int DSSD::Calibrate(){
   double e_high_gm[2][40] = {{0}};
   double e_high_slopes[2][40] = {{0}};
   double e_high_intercepts[2][40] = {{0}};
-    // method goes: gain-match->calibrate->apply thresholds
   
   // High gain, back side
   e_high_gm[0][0]  = 0.7667141951291161; 
@@ -716,7 +714,7 @@ int DSSD::Calibrate(){
   e_high_gm[1][38] = 0.9899046464456456;
   e_high_gm[1][39] = 1.0777719485775725;
 
-  // Updated Sept 2020 kh
+  // Updated Sept 2015 DR
   e_high_slopes[0][0]  = 0.323733795945225  ; 
   e_high_slopes[0][1]  = 0.324359592380002  ;
   e_high_slopes[0][2]  = 0.326932414775029  ;
@@ -800,7 +798,7 @@ int DSSD::Calibrate(){
   e_high_intercepts[0][39] = 285.483841956998;
 
   // High gain, front side
-  // Updated Sept 2020 kh
+  // Updated Sept 2015 DR
   e_high_slopes[1][0]  = 0.337578389181782  ;
   e_high_slopes[1][1]  = 0.330179415828127  ;
   e_high_slopes[1][2]  = 0.32919855996993   ;
@@ -891,7 +889,6 @@ int DSSD::Calibrate(){
   double e_low_raw_thresholds_upper_bounds[2][40] = {{0}};
 
   // Low gain, back side, lower bound
-    // these are primarily just used to turn certain strips off
 
   e_low_raw_thresholds_lower_bounds[0][0]  = 1000000;
   e_low_raw_thresholds_lower_bounds[0][1]  = 1000000;
@@ -976,9 +973,7 @@ int DSSD::Calibrate(){
   e_low_raw_thresholds_lower_bounds[1][37] = 10;
   e_low_raw_thresholds_lower_bounds[1][38] = 10;
   e_low_raw_thresholds_lower_bounds[1][39] = 10;
-
   // Low gain, back side, upper bound
-    // primarily used to determine overflow events
 
   e_low_raw_thresholds_upper_bounds[0][0]  = 32000;
   e_low_raw_thresholds_upper_bounds[0][1]  = -1;
@@ -1072,7 +1067,6 @@ int DSSD::Calibrate(){
   double e_high_raw_thresholds_upper_bounds[2][40] = {{0}};
 
   // High gain, back side, lower bound
-    // these are primarily just used to turn certain strips off
 
   e_high_raw_thresholds_lower_bounds[0][0]  = 1; 
   e_high_raw_thresholds_lower_bounds[0][1]  = 1; 
@@ -1250,89 +1244,89 @@ int DSSD::Calibrate(){
 
   // High gain, back side, lower bound
 
-  e_high_cal_thresholds_lower_bounds[0][0]  = 550+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][1]  = 500+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][2]  = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][3]  = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][4]  = 500+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][5]  = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][6]  = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][7]  = 530+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][8]  = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][9]  = 520+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][10] = 500+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][11] = 490+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][12] = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][13] = 480+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][14] = 460+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][15] = 460+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][16] = 360+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][17] = 360+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][18] = 400+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][19] = 390+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][20] = 380+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][21] = 330+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][22] = 360+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][23] = 380+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][24] = 350+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][25] = 370+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][26] = 400+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][27] = 400+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][28] = 380+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][29] = 380+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][30] = 380+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][31] = 400+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][32] = 520+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][33] = 490+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][34] = 510+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][35] = 510+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][36] = 500+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][37] = 540+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][38] = 500+reduce;// 1;
-  e_high_cal_thresholds_lower_bounds[0][39] = 520+reduce;// 1;
+  e_high_cal_thresholds_lower_bounds[0][0]  = 550;// 1;
+  e_high_cal_thresholds_lower_bounds[0][1]  = 500;// 1;
+  e_high_cal_thresholds_lower_bounds[0][2]  = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][3]  = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][4]  = 500;// 1;
+  e_high_cal_thresholds_lower_bounds[0][5]  = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][6]  = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][7]  = 530;// 1;
+  e_high_cal_thresholds_lower_bounds[0][8]  = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][9]  = 520;// 1;
+  e_high_cal_thresholds_lower_bounds[0][10] = 500;// 1;
+  e_high_cal_thresholds_lower_bounds[0][11] = 490;// 1;
+  e_high_cal_thresholds_lower_bounds[0][12] = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][13] = 480;// 1;
+  e_high_cal_thresholds_lower_bounds[0][14] = 460;// 1;
+  e_high_cal_thresholds_lower_bounds[0][15] = 460;// 1;
+  e_high_cal_thresholds_lower_bounds[0][16] = 360;// 1;
+  e_high_cal_thresholds_lower_bounds[0][17] = 360;// 1;
+  e_high_cal_thresholds_lower_bounds[0][18] = 400;// 1;
+  e_high_cal_thresholds_lower_bounds[0][19] = 390;// 1;
+  e_high_cal_thresholds_lower_bounds[0][20] = 380;// 1;
+  e_high_cal_thresholds_lower_bounds[0][21] = 330;// 1;
+  e_high_cal_thresholds_lower_bounds[0][22] = 360;// 1;
+  e_high_cal_thresholds_lower_bounds[0][23] = 380;// 1;
+  e_high_cal_thresholds_lower_bounds[0][24] = 350;// 1;
+  e_high_cal_thresholds_lower_bounds[0][25] = 370;// 1;
+  e_high_cal_thresholds_lower_bounds[0][26] = 400;// 1;
+  e_high_cal_thresholds_lower_bounds[0][27] = 400;// 1;
+  e_high_cal_thresholds_lower_bounds[0][28] = 380;// 1;
+  e_high_cal_thresholds_lower_bounds[0][29] = 380;// 1;
+  e_high_cal_thresholds_lower_bounds[0][30] = 380;// 1;
+  e_high_cal_thresholds_lower_bounds[0][31] = 400;// 1;
+  e_high_cal_thresholds_lower_bounds[0][32] = 520;// 1;
+  e_high_cal_thresholds_lower_bounds[0][33] = 490;// 1;
+  e_high_cal_thresholds_lower_bounds[0][34] = 510;// 1;
+  e_high_cal_thresholds_lower_bounds[0][35] = 510;// 1;
+  e_high_cal_thresholds_lower_bounds[0][36] = 500;// 1;
+  e_high_cal_thresholds_lower_bounds[0][37] = 540;// 1;
+  e_high_cal_thresholds_lower_bounds[0][38] = 500;// 1;
+  e_high_cal_thresholds_lower_bounds[0][39] = 520;// 1;
 
   // High gain, front side, lower bound
 
-  e_high_cal_thresholds_lower_bounds[1][0]  = 275+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][1]  = 330+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][2]  = 350+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][3]  = 400+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][4]  = 310+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][5]  = 410+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][6]  = 390+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][7]  = 380+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][8]  = 435+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][9]  = 300+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][10] = 300+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][11] = 400+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][12] = 430+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][13] = 430+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][14] = 370+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][15] = 370+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][16] = 470+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][17] = 420+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][18] = 370+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][19] = 420+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][20] = 410+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][21] = 400+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][22] = 380+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][23] = 340+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][24] = 480+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][25] = 450+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][26] = 440+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][27] = 470+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][28] = 430+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][29] = 380+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][30] = 430+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][31] = 530+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][32] = 360+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][33] = 400+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][34] = 400+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][35] = 420+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][36] = 410+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][37] = 380+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][38] = 350+reduce;//1;
-  e_high_cal_thresholds_lower_bounds[1][39] = 410+reduce;//1;
+  e_high_cal_thresholds_lower_bounds[1][0]  = 275;//1;
+  e_high_cal_thresholds_lower_bounds[1][1]  = 330;//1;
+  e_high_cal_thresholds_lower_bounds[1][2]  = 350;//1;
+  e_high_cal_thresholds_lower_bounds[1][3]  = 400;//1;
+  e_high_cal_thresholds_lower_bounds[1][4]  = 310;//1;
+  e_high_cal_thresholds_lower_bounds[1][5]  = 410;//1;
+  e_high_cal_thresholds_lower_bounds[1][6]  = 390;//1;
+  e_high_cal_thresholds_lower_bounds[1][7]  = 380;//1;
+  e_high_cal_thresholds_lower_bounds[1][8]  = 435;//1;
+  e_high_cal_thresholds_lower_bounds[1][9]  = 300;//1;
+  e_high_cal_thresholds_lower_bounds[1][10] = 300;//1;
+  e_high_cal_thresholds_lower_bounds[1][11] = 400;//1;
+  e_high_cal_thresholds_lower_bounds[1][12] = 430;//1;
+  e_high_cal_thresholds_lower_bounds[1][13] = 430;//1;
+  e_high_cal_thresholds_lower_bounds[1][14] = 370;//1;
+  e_high_cal_thresholds_lower_bounds[1][15] = 370;//1;
+  e_high_cal_thresholds_lower_bounds[1][16] = 470;//1;
+  e_high_cal_thresholds_lower_bounds[1][17] = 420;//1;
+  e_high_cal_thresholds_lower_bounds[1][18] = 370;//1;
+  e_high_cal_thresholds_lower_bounds[1][19] = 420;//1;
+  e_high_cal_thresholds_lower_bounds[1][20] = 410;//1;
+  e_high_cal_thresholds_lower_bounds[1][21] = 400;//1;
+  e_high_cal_thresholds_lower_bounds[1][22] = 380;//1;
+  e_high_cal_thresholds_lower_bounds[1][23] = 340;//1;
+  e_high_cal_thresholds_lower_bounds[1][24] = 480;//1;
+  e_high_cal_thresholds_lower_bounds[1][25] = 450;//1;
+  e_high_cal_thresholds_lower_bounds[1][26] = 440;//1;
+  e_high_cal_thresholds_lower_bounds[1][27] = 470;//1;
+  e_high_cal_thresholds_lower_bounds[1][28] = 430;//1;
+  e_high_cal_thresholds_lower_bounds[1][29] = 380;//1;
+  e_high_cal_thresholds_lower_bounds[1][30] = 430;//1;
+  e_high_cal_thresholds_lower_bounds[1][31] = 530;//1;
+  e_high_cal_thresholds_lower_bounds[1][32] = 360;//1;
+  e_high_cal_thresholds_lower_bounds[1][33] = 400;//1;
+  e_high_cal_thresholds_lower_bounds[1][34] = 400;//1;
+  e_high_cal_thresholds_lower_bounds[1][35] = 420;//1;
+  e_high_cal_thresholds_lower_bounds[1][36] = 410;//1;
+  e_high_cal_thresholds_lower_bounds[1][37] = 380;//1;
+  e_high_cal_thresholds_lower_bounds[1][38] = 350;//1;
+  e_high_cal_thresholds_lower_bounds[1][39] = 410;//1;
 
   // High gain, back side, upper bound
   double increase = 13000;
@@ -1437,18 +1431,16 @@ int DSSD::Calibrate(){
       //std::cout << "into dssd" << std::endl;
       if ((e_low_raw[i][j] > e_low_raw_thresholds_lower_bounds[i][j])){
         if ((e_low_raw[i][j] >= e_low_raw_thresholds_upper_bounds[i][j])){
-        // if e_low_raw above upper threshold set overflow
 	    e_low_cal[i][j] = 32768;
             //std::cout << e_low_cal[i][j] << std::endl;
 	    m_low_cal[i] ++;
         }
         else {
-        // else gain match according to high gain gain matching
 	  e_low_cal[i][j] = e_low_slopes[i][j] * e_low_raw[i][j];
         }
-	t_low_cal[i][j] = t_low_raw[i][j];// * 10; // SPECIFIC to e12001. Convert clock ticks to nanoseconds.
+	t_low_cal[i][j] = maxtime - t_low_raw[i][j];// * 10; // SPECIFIC to e12001. Convert clock ticks to nanoseconds.
 	
-//	m_low_cal[i] ++; // I use this to track overflows only
+//	m_low_cal[i] ++;
 
 	if (i==0){ // Low gain, back side
 
@@ -1491,14 +1483,12 @@ int DSSD::Calibrate(){
     } // end if i ==1
         //std::cout << "calculating mid" << std::endl;
         int mid = 0; 
-//        if (overflows.size() <= 1){ 
+//        if (overflow == 0){ mid = int(round(stripno/totenergy)); }
         if (overflows.size() <= -1){ 
-            // if <=1 overflow strip, take the c_strip with the highest energy
-            if(i==0){mid = c_strip_low_back;}
+            if (i==0){mid = c_strip_low_back;}
             if(i==1){mid=c_strip_low_front; }
         } // end if overflow<=1
         else {
-             // if >1 overflow strip, take the strip at the center of the weighted energy
              mid = int(round(stripno/totenergy));
         } // end else
         if (i == 0){
@@ -1515,16 +1505,14 @@ int DSSD::Calibrate(){
         } // end if i==1
 //        std::cout << e_strip_low_back << ", " << e_strip_low_front << std::endl;
       } // end if elowraw in threshold
-
-      // at end of side, check if there are overflows in nonsequential strips
       if (overflows.size() > 1 && j == 39){
             for (int of = 1; of < overflows.size(); of++){
         if (overflows[of] - overflows[of-1] > 2){
             separate_overflows++;
-        } // end if overflows are nonsequential
+        }
             break;
-            } // end for of in overflows
-      } // end if last strip in side and overflows.size() > 1
+            }
+      }
   
       
       // High gain
@@ -1536,7 +1524,7 @@ int DSSD::Calibrate(){
 
 	e_high_cal[i][j] = e_high_slopes[i][j] * e_high_raw[i][j] * e_high_gm[i][j] + e_high_intercepts[i][j];
 	
-	t_high_cal[i][j] = t_high_raw[i][j];// * 10; // SPECIFIC to e12001. Convert clock ticks to nanoseconds.
+	t_high_cal[i][j] = maxtime - t_high_raw[i][j];// * 10; // SPECIFIC to e12001. Convert clock ticks to nanoseconds.
 	
 	m_high_cal[i] ++;
 //    if (m_high_cal[i] > 1)
@@ -1875,7 +1863,7 @@ public:
 
 
   // Calibration
-  void Calibrate();
+  void Calibrate(double maxtime);
   // Diagnostics
   friend std::ostream& operator<< (std::ostream& os, const SSSD& event);
 
@@ -1913,7 +1901,7 @@ double SSSD::GetMaxTime() const{
   return t_SSSD_max;
 }
 
-void SSSD::Calibrate(){
+void SSSD::Calibrate(double maxtime){
 
    //Calibration Values
 
@@ -2000,7 +1988,7 @@ void SSSD::Calibrate(){
    for (int i=0; i<16; i++){
       if ((e_SSSD_raw[1][i] > e_SSSD_raw_thresholds_lower_bounds[i]) && (e_SSSD_raw[1][i] < e_SSSD_raw_thresholds_upper_bounds[i])){
 	 e_SSSD_cal[1][i] = e_SSSD_slopes[i] * e_SSSD_raw[1][i] + e_SSSD_intercepts[i]; //cal SSSD energy
-	 t_SSSD_cal[1][i] = t_SSSD_raw[1][i];
+	 t_SSSD_cal[1][i] = maxtime - t_SSSD_raw[1][i];
 //     std::cout<<e_SSSD_max<<" "<<e_SSSD_cal[i]<<" "<<e_SSSD_raw[i]<<std::endl;
 	 //Find max energy
          if (e_SSSD_cal[1][i] > e_SSSD_max){
@@ -2071,7 +2059,7 @@ public:
 
 
   // Calibration
-  void Calibrate();
+  void Calibrate(double maxtime);
   // Diagnostics
   friend std::ostream& operator<< (std::ostream& os, const NERO& event);
 
@@ -2116,9 +2104,10 @@ double SSSD::GetMaxTime() const{
   return t_SSSD_max;
 }*/
 
-void NERO::Calibrate(){
+void NERO::Calibrate(double maxtime){
    //std::cout << "NERO is being calibrated" << std::endl;
    //Calibration Values
+   
    double e_NERO_slopes[4][15] = {{0}};
    double e_NERO_intercepts[4][15] = {{0}};
 
@@ -2257,7 +2246,7 @@ void NERO::Calibrate(){
       //if(e_NERO_raw[i][j] > 1){std::cout << "e_NERO_raw is " << e_NERO_raw[i][j] << std::endl;}
       if ((e_NERO_raw[i][j] > e_NERO_raw_thresholds_lower_bounds[i][j]) && (e_NERO_raw[i][j] < e_NERO_raw_thresholds_upper_bounds[i][j])){
 	 e_NERO_cal[i][j] = e_NERO_raw[i][j]; //cal SSSD energy
-	 t_NERO_cal[i][j] = t_NERO_raw[i][j];
+	 t_NERO_cal[i][j] = maxtime - t_NERO_raw[i][j];
          multN ++;
          //std::cout << "NERO tube "<< j << " in quad " << i << " is being calibrated" << std::endl;
          //std::cout << "NERO time = " << t_NERO_cal[i][j] << std::endl;
@@ -2322,7 +2311,7 @@ public:
    double GetScintCalTime() const;
 
    //Calibrate
-   void Calibrate(int scint_thresh);
+   void Calibrate(int scint_thresh,double maxtime);
 
 private:
 
@@ -2348,7 +2337,7 @@ double SCINT::GetScintCalTime() const{
    return t_Scint_cal;
 }
 
-void SCINT::Calibrate(int scint_thresh){
+void SCINT::Calibrate(int scint_thresh,double maxtime){
 
    double e_scint_lowthres = 0;
    double e_scint_hithres = 0;
@@ -2364,7 +2353,7 @@ void SCINT::Calibrate(int scint_thresh){
    //Apply threshold conditions
    if (e_Scint_raw >= e_scint_lowthres && e_Scint_raw < e_scint_hithres) {
      e_Scint_cal = e_Scint_raw;
-     t_Scint_cal = t_Scint_raw;
+     t_Scint_cal = maxtime - t_Scint_raw;
 
    }
 }
